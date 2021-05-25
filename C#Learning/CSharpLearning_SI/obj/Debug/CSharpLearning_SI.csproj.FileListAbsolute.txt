@@ -1,0 +1,7 @@
+C:\Users\Alkesh Kataria\source\repos\CSharpLearning_SI\bin\Debug\CSharpLearning_SI.exe.config
+C:\Users\Alkesh Kataria\source\repos\CSharpLearning_SI\bin\Debug\CSharpLearning_SI.exe
+C:\Users\Alkesh Kataria\source\repos\CSharpLearning_SI\bin\Debug\CSharpLearning_SI.pdb
+C:\Users\Alkesh Kataria\source\repos\CSharpLearning_SI\obj\Debug\CSharpLearning_SI.csprojAssemblyReference.cache
+C:\Users\Alkesh Kataria\source\repos\CSharpLearning_SI\obj\Debug\CSharpLearning_SI.csproj.CoreCompileInputs.cache
+C:\Users\Alkesh Kataria\source\repos\CSharpLearning_SI\obj\Debug\CSharpLearning_SI.exe
+C:\Users\Alkesh Kataria\source\repos\CSharpLearning_SI\obj\Debug\CSharpLearning_SI.pdb
