@@ -1,0 +1,13 @@
+C:\Users\Alkesh Kataria\source\repos\SI_PDF1\bin\Debug\netcoreapp3.1\SI_PDF1.exe
+C:\Users\Alkesh Kataria\source\repos\SI_PDF1\bin\Debug\netcoreapp3.1\SI_PDF1.deps.json
+C:\Users\Alkesh Kataria\source\repos\SI_PDF1\bin\Debug\netcoreapp3.1\SI_PDF1.runtimeconfig.json
+C:\Users\Alkesh Kataria\source\repos\SI_PDF1\bin\Debug\netcoreapp3.1\SI_PDF1.runtimeconfig.dev.json
+C:\Users\Alkesh Kataria\source\repos\SI_PDF1\bin\Debug\netcoreapp3.1\SI_PDF1.dll
+C:\Users\Alkesh Kataria\source\repos\SI_PDF1\bin\Debug\netcoreapp3.1\SI_PDF1.pdb
+C:\Users\Alkesh Kataria\source\repos\SI_PDF1\obj\Debug\netcoreapp3.1\SI_PDF1.csprojAssemblyReference.cache
+C:\Users\Alkesh Kataria\source\repos\SI_PDF1\obj\Debug\netcoreapp3.1\SI_PDF1.AssemblyInfoInputs.cache
+C:\Users\Alkesh Kataria\source\repos\SI_PDF1\obj\Debug\netcoreapp3.1\SI_PDF1.AssemblyInfo.cs
+C:\Users\Alkesh Kataria\source\repos\SI_PDF1\obj\Debug\netcoreapp3.1\SI_PDF1.csproj.CoreCompileInputs.cache
+C:\Users\Alkesh Kataria\source\repos\SI_PDF1\obj\Debug\netcoreapp3.1\SI_PDF1.dll
+C:\Users\Alkesh Kataria\source\repos\SI_PDF1\obj\Debug\netcoreapp3.1\SI_PDF1.pdb
+C:\Users\Alkesh Kataria\source\repos\SI_PDF1\obj\Debug\netcoreapp3.1\SI_PDF1.genruntimeconfig.cache

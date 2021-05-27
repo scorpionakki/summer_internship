@@ -12,6 +12,7 @@ struct RBTNConn {
     struct RBTN* rbtn = nullptr;
     struct RBTNConn* left = nullptr;
     struct RBTNConn* right = nullptr;
+    struct RBTNConn* parent = nullptr;
 };
 
 RBTNConn* root = nullptr;
@@ -27,6 +28,7 @@ public:
 
         if (root == nullptr)
         {
+            newNode->rbtn->col = 'B';
             root = newNode;
             return;
         }
@@ -42,6 +44,8 @@ private:
             if (currNode->left == nullptr)
             {
                 currNode->left = newNode;
+                newNode->parent = currNode;
+                fixPositions(currNode, newNode);
                 return;
             }
             currNode = currNode->left;
@@ -52,18 +56,83 @@ private:
             if (currNode->right == nullptr)
             {
                 currNode->right = newNode;
+                newNode->parent = currNode;
+                fixPositions(currNode, newNode);
                 return;
             }
             currNode = currNode->right;
             placeNode(currNode, newNode);
         }
     }
+
+    void fixPositions(RBTNConn* currNode, RBTNConn* newNode)
+    {
+        if (currNode->rbtn->num > newNode->rbtn->num && currNode->left->rbtn->num != newNode->rbtn->num)
+        {
+            currNode = currNode->left;
+            fixPositions(currNode, newNode);
+        }
+        else if (currNode->rbtn->num < newNode->rbtn->num && currNode->right->rbtn->num != newNode->rbtn->num)
+        {
+            currNode = currNode->right;
+            fixPositions(currNode, newNode);
+        }
+
+        if (currNode->right == newNode)
+        {
+            if (currNode->rbtn->col == 'R')
+            {
+                //Red Red pair needs to fix.
+                if (currNode->parent->left == currNode)
+                {
+                    if (currNode->parent->right != nullptr)
+                    {
+                        if (currNode->parent->right->rbtn->col == 'R')
+                        {
+                            //Sibling also has color red - need to recolor
+                            currNode->rbtn->col = 'B';
+                            currNode->parent->right->rbtn->col = 'B';
+                        }
+                        else
+                        {
+                            //Sibling has color black - need to do rotations
+                        }
+                    }
+                    else
+                    {
+                        //No sibling exists - need to do rotations
+                    }
+                }
+                else if(currNode->parent->right == currNode)
+                {
+                    if (currNode->parent->left != nullptr)
+                    {
+                        if (currNode->parent->left->rbtn->col == 'R')
+                        {
+                            //Sibling also has color red - need to recolor
+                            currNode->rbtn->col = 'B';
+                            currNode->parent->left->rbtn->col = 'B';
+                        }
+                        else
+                        {
+                            //Sibling has color black - need to do rotations
+                        }
+                    }
+                    else
+                    {
+                        //No sibling exists - need to do rotations
+                    }
+                }
+            }
+        }
+    }
+
 public:
     void preOrderTraversal(RBTNConn* root)
     {
         if (root == nullptr)
             return;
-        cout << root->rbtn->num << endl;
+        cout << root->rbtn->num <<" : "<< root->rbtn->col << endl;
         preOrderTraversal(root->left);
         preOrderTraversal(root->right);
     }
@@ -107,16 +176,9 @@ int main()
     rbt.addNode(4);
     rbt.addNode(6);
 
-    //rbt.preOrderTraversal(root);
+    rbt.preOrderTraversal(root);
     cout << rbt.findNode(root, 0) << endl;
-    cout << rbt.findNode(root, 1) << endl;
-    cout << rbt.findNode(root, 3) << endl;
-    cout << rbt.findNode(root, 2) << endl;
-    cout << rbt.findNode(root, 5) << endl;
-    cout << rbt.findNode(root, 4) << endl;
-    cout << rbt.findNode(root, 6) << endl;
-    cout << "-------------" << endl;
-    cout << rbt.findNode(root, 9) << endl;
+ 
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
