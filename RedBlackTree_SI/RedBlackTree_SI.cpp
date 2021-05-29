@@ -82,7 +82,130 @@ private:
         {
             if (currNode->rbtn->col == 'R')
             {
-                //Red Red pair needs to fix.
+                //Red Red pair need to fix.
+                if (currNode->parent->left == currNode)
+                {
+                    if (currNode->parent->right != nullptr)
+                    {
+                        if (currNode->parent->right->rbtn->col == 'R')
+                        {
+                            //Sibling also has color red - need to recolor
+                            currNode->rbtn->col = 'B';
+                            currNode->parent->right->rbtn->col = 'B';
+                            if (currNode->parent != root)
+                            {
+                                currNode->parent->rbtn->col = 'R';
+                            }
+                        }
+                        else
+                        {
+                            //Sibling has color black - need to do rotations
+                            RBTNConn* sibling = currNode->parent->right;
+
+                            //Left rotation (child and parent)
+                            RBTNConn* temp = currNode;
+                            currNode->parent->left = newNode;
+                            newNode->parent = currNode->parent;
+                            newNode->left = temp;
+                            temp->parent = newNode;
+                            currNode->right = nullptr;
+
+                            //Right rotation (child, parent and grandparent)
+                            RBTNConn* tempParent = newNode->parent;
+                            newNode->right = tempParent;
+                            newNode->parent = newNode->parent->parent;
+                            tempParent->parent = newNode;
+                            tempParent->right = sibling;
+                            sibling->parent = tempParent;
+                            newNode->parent->left = nullptr;
+
+
+                            newNode->right->rbtn->col = 'R';
+                            newNode->rbtn->col = 'B';
+
+                        }
+                    }
+                    else
+                    {
+                        //No sibling exists - need to do rotations
+                        //parent(Black) -> left(Red) -> right(Red) LR  
+
+                        //Left rotation (child and parent)
+                        RBTNConn* temp = new RBTNConn;
+                        temp = currNode;
+                        currNode->parent->left = newNode;
+                        newNode->parent = temp->parent;
+                        newNode->left = temp;
+                        temp->parent = newNode;
+                        temp->right = nullptr;
+
+                        //Right rotation (child, parent and grandparent)
+                        RBTNConn* tempParent = newNode->parent;
+                        newNode->right = tempParent;
+                        tempParent->parent->right = newNode;
+                        newNode->parent = tempParent->parent;
+                        tempParent->parent = newNode;
+                        tempParent->left = nullptr;
+
+                        newNode->right->rbtn->col = 'R';
+                        newNode->rbtn->col = 'B';
+
+                       
+                    }
+                }
+                else if(currNode->parent->right == currNode)
+                {
+                    if (currNode->parent->left != nullptr)
+                    {
+                        if (currNode->parent->left->rbtn->col == 'R')
+                        {
+                            //Sibling also has color red - need to recolor
+                            currNode->rbtn->col = 'B';
+                            currNode->parent->left->rbtn->col = 'B';
+                            if (currNode->parent != root)
+                            {
+                                currNode->parent->rbtn->col = 'R';
+                            }
+                        }
+                        else
+                        {
+                            //Sibling has color black - need to do rotations
+                            RBTNConn* temp = currNode->parent;
+                            currNode->parent = currNode->parent->parent;
+                            currNode->left = temp;
+                            temp->parent = currNode;
+                            temp->right = nullptr;
+
+
+                            currNode->rbtn->col = 'B';
+                            currNode->left->rbtn->col = 'R';
+
+                        }
+                    }
+                    else
+                    {
+                        //No sibling exists - need to do rotations
+                        //parent(black) -> right(Red) -> right(Red) RR
+                        RBTNConn* temp = currNode->parent;
+                        currNode->parent = currNode->parent->parent;
+                        currNode->parent->right = currNode;
+                        currNode->left = temp;
+                        temp->parent = currNode;
+                        temp->right = nullptr;
+
+
+                        currNode->rbtn->col = 'B';
+                        currNode->left->rbtn->col = 'R';
+
+                    }
+                }
+            }
+        }
+        else if (currNode->left == newNode)
+        {
+            if (currNode->rbtn->col == 'R')
+            {
+                //Red Red pair need to fix.
                 if (currNode->parent->left == currNode)
                 {
                     if (currNode->parent->right != nullptr)
@@ -96,14 +219,35 @@ private:
                         else
                         {
                             //Sibling has color black - need to do rotations
+                            RBTNConn* temp = currNode->parent;
+                            currNode->parent = currNode->parent->parent;
+                            currNode->right = temp;
+                            temp->left = nullptr;
+                            temp->parent = currNode;
+
+                            currNode->rbtn->col = 'B';
+                            currNode->right->rbtn->col = 'R';
+
+                            
                         }
                     }
                     else
                     {
                         //No sibling exists - need to do rotations
+                        //parent(Black) -> left(Red) -> left(Red) LL  
+                        RBTNConn* temp = currNode->parent;
+                        currNode->parent = currNode->parent->parent;
+                        currNode->right = temp;
+                        temp->left = nullptr;
+                        temp->parent = currNode;
+
+                        currNode->rbtn->col = 'B';
+                        currNode->right->rbtn->col = 'R';
+
+                        
                     }
                 }
-                else if(currNode->parent->right == currNode)
+                else if (currNode->parent->right == currNode)
                 {
                     if (currNode->parent->left != nullptr)
                     {
@@ -116,11 +260,47 @@ private:
                         else
                         {
                             //Sibling has color black - need to do rotations
+                            //Right rotation(child and parent)
+                            newNode->parent = currNode->parent;
+                            newNode->right = currNode;
+                            currNode->parent = newNode;
+                            currNode->left = nullptr;
+
+                            //Left rotation(parent, child and grandparent)
+                            RBTNConn* temp = newNode->parent;
+                            newNode->parent = newNode->parent->parent;
+                            newNode->left = temp;
+                            temp->parent = newNode;
+                            temp->right = nullptr;
+
+                            newNode->rbtn->col = 'B';
+                            newNode->left->rbtn->col = 'R';
+
+                           
                         }
                     }
                     else
                     {
                         //No sibling exists - need to do rotations
+                        //parent(black) -> left(Red) -> right(Red) LR
+                        
+                       //Right rotation(child and parent)
+                        newNode->parent = currNode->parent;
+                        newNode->right = currNode;
+                        currNode->parent = newNode;
+                        currNode->left = nullptr;
+
+                        //Left rotation(parent, child and grandparent)
+                        RBTNConn* temp = newNode->parent;
+                        newNode->parent = newNode->parent->parent;
+                        newNode->left = temp;
+                        temp->parent = newNode;
+                        temp->right = nullptr;
+
+                        newNode->rbtn->col = 'B';
+                        newNode->left->rbtn->col = 'R';
+
+                       
                     }
                 }
             }
@@ -159,25 +339,17 @@ public:
 int main()
 {
     RedBlackTree rbt;
-    /*rbt.addNode(10);
+    rbt.addNode(10);
     rbt.addNode(20);
     rbt.addNode(-10);
     rbt.addNode(15);
     rbt.addNode(17);
     rbt.addNode(40);
-    rbt.addNode(50);
-    rbt.addNode(60);*/
-
-    rbt.addNode(3);
-    rbt.addNode(1);
-    rbt.addNode(0);
-    rbt.addNode(2);
-    rbt.addNode(5);
-    rbt.addNode(4);
-    rbt.addNode(6);
+   rbt.addNode(50);
+   rbt.addNode(60);
 
     rbt.preOrderTraversal(root);
-    cout << rbt.findNode(root, 0) << endl;
+    /*cout << rbt.findNode(root, 0) << endl;*/
  
 }
 
