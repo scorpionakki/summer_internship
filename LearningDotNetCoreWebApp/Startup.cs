@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -38,6 +39,22 @@ namespace LearningDotNetCoreWebApp
             }
             app.UseStaticFiles();
 
+
+            ////The request will by default go to this middleware
+            //app.Use(async (context, next) =>
+            //{
+            //    await context.Response.WriteAsync("Hello from the first middleware\n");
+            //    await next(); //This will go to the next middleware
+            //    await context.Response.WriteAsync("Hello again from the first middleware\n"); //After running the second middleware the control is shifted back to the first middleware
+            //});
+
+            ////The second middleware
+            //app.Use(async (context, next) =>
+            //{
+            //    await context.Response.WriteAsync("Hello from the second middleware\n");
+            //    /*await next();*/ //For calling app.UseRouting() middleware
+            //});
+
             app.UseRouting();
 
             app.UseAuthorization();
@@ -48,6 +65,8 @@ namespace LearningDotNetCoreWebApp
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            
         }
     }
 }

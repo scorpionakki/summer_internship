@@ -8,7 +8,6 @@ C:\Users\Alkesh Kataria\source\repos\LearningDotNetCoreWebApp\bin\Debug\netcorea
 C:\Users\Alkesh Kataria\source\repos\LearningDotNetCoreWebApp\bin\Debug\netcoreapp3.1\LearningDotNetCoreWebApp.pdb
 C:\Users\Alkesh Kataria\source\repos\LearningDotNetCoreWebApp\bin\Debug\netcoreapp3.1\LearningDotNetCoreWebApp.Views.dll
 C:\Users\Alkesh Kataria\source\repos\LearningDotNetCoreWebApp\bin\Debug\netcoreapp3.1\LearningDotNetCoreWebApp.Views.pdb
-C:\Users\Alkesh Kataria\source\repos\LearningDotNetCoreWebApp\obj\Debug\netcoreapp3.1\LearningDotNetCoreWebApp.csprojAssemblyReference.cache
 C:\Users\Alkesh Kataria\source\repos\LearningDotNetCoreWebApp\obj\Debug\netcoreapp3.1\LearningDotNetCoreWebApp.AssemblyInfoInputs.cache
 C:\Users\Alkesh Kataria\source\repos\LearningDotNetCoreWebApp\obj\Debug\netcoreapp3.1\LearningDotNetCoreWebApp.AssemblyInfo.cs
 C:\Users\Alkesh Kataria\source\repos\LearningDotNetCoreWebApp\obj\Debug\netcoreapp3.1\LearningDotNetCoreWebApp.csproj.CoreCompileInputs.cache
@@ -35,3 +34,4 @@ C:\Users\Alkesh Kataria\source\repos\LearningDotNetCoreWebApp\obj\Debug\netcorea
 C:\Users\Alkesh Kataria\source\repos\LearningDotNetCoreWebApp\obj\Debug\netcoreapp3.1\LearningDotNetCoreWebApp.pdb
 C:\Users\Alkesh Kataria\source\repos\LearningDotNetCoreWebApp\obj\Debug\netcoreapp3.1\LearningDotNetCoreWebApp.genruntimeconfig.cache
 C:\Users\Alkesh Kataria\source\repos\LearningDotNetCoreWebApp\obj\Debug\netcoreapp3.1\LearningDotNetCoreWebApp.csproj.CopyComplete
+C:\Users\Alkesh Kataria\source\repos\LearningDotNetCoreWebApp\obj\Debug\netcoreapp3.1\LearningDotNetCoreWebApp.csproj.AssemblyReference.cache
