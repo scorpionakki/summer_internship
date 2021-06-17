@@ -1,0 +1,15 @@
+C:\Users\Alkesh Kataria\source\repos\MyCoffeeApp\MyCoffeeApp\bin\Debug\netstandard2.0\MyCoffeeApp.deps.json
+C:\Users\Alkesh Kataria\source\repos\MyCoffeeApp\MyCoffeeApp\bin\Debug\netstandard2.0\MyCoffeeApp.dll
+C:\Users\Alkesh Kataria\source\repos\MyCoffeeApp\MyCoffeeApp\bin\Debug\netstandard2.0\ref\MyCoffeeApp.dll
+C:\Users\Alkesh Kataria\source\repos\MyCoffeeApp\MyCoffeeApp\bin\Debug\netstandard2.0\MyCoffeeApp.pdb
+C:\Users\Alkesh Kataria\source\repos\MyCoffeeApp\MyCoffeeApp\obj\Debug\netstandard2.0\MyCoffeeApp.csproj.AssemblyReference.cache
+C:\Users\Alkesh Kataria\source\repos\MyCoffeeApp\MyCoffeeApp\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Alkesh Kataria\source\repos\MyCoffeeApp\MyCoffeeApp\obj\Debug\netstandard2.0\AppShell.xaml.g.cs
+C:\Users\Alkesh Kataria\source\repos\MyCoffeeApp\MyCoffeeApp\obj\Debug\netstandard2.0\Views\CoffeeEquipmentPage.xaml.g.cs
+C:\Users\Alkesh Kataria\source\repos\MyCoffeeApp\MyCoffeeApp\obj\Debug\netstandard2.0\MyCoffeeApp.AssemblyInfoInputs.cache
+C:\Users\Alkesh Kataria\source\repos\MyCoffeeApp\MyCoffeeApp\obj\Debug\netstandard2.0\MyCoffeeApp.AssemblyInfo.cs
+C:\Users\Alkesh Kataria\source\repos\MyCoffeeApp\MyCoffeeApp\obj\Debug\netstandard2.0\MyCoffeeApp.csproj.CoreCompileInputs.cache
+C:\Users\Alkesh Kataria\source\repos\MyCoffeeApp\MyCoffeeApp\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Alkesh Kataria\source\repos\MyCoffeeApp\MyCoffeeApp\obj\Debug\netstandard2.0\MyCoffeeApp.dll
+C:\Users\Alkesh Kataria\source\repos\MyCoffeeApp\MyCoffeeApp\obj\Debug\netstandard2.0\ref\MyCoffeeApp.dll
+C:\Users\Alkesh Kataria\source\repos\MyCoffeeApp\MyCoffeeApp\obj\Debug\netstandard2.0\MyCoffeeApp.pdb
