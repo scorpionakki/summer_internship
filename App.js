@@ -4,6 +4,7 @@ import {
   View,
   FlatList,
   Button,
+  Text,
 } from "react-native";
 
 import GoalItem from "./components/GoalItem";
@@ -35,9 +36,15 @@ export default function App() {
 
   return (
     <View style={styles.screen}>
-      <Button title="Add New Goal" onPress={() => setIsAddMode(true)}/>
+      <View style={styles.heading}>
+        <Text style={styles.headingText}color="white">Course Goals</Text>
+      </View>
+      <View>
+        <Button color="purple" title="Add New Goal" onPress={() => setIsAddMode(true)}/>
+      </View>
       <GoalInput visible={isAddMode} onCancel={cancelGoalAdditionHandler} onAddGoal={addGoalHandler} />
 
+      <Text style={styles.goalsText}>Goals</Text>
       {/* Now you can use ScrollView instead of FlatList but if a list is having a good amount of data then scrollView would take a hit in terms of performance as it will load up the whole list instead of just the items that are up there on the screen, always use FlatList if you aren't sure the amount of data */}
       <FlatList
         style={styles.list}
@@ -52,10 +59,32 @@ export default function App() {
 const styles = StyleSheet.create({
   screen: {
     padding: 50,
+    paddingTop: 150,
     backgroundColor: 'black',
     flex:1 
   },
   list: {
-    marginTop: 50,
-  }
+    marginTop: 10,
+  },
+  heading: {
+    height: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: -50,
+    marginRight: -50,
+    marginTop: -120,
+    marginBottom: 80,
+    backgroundColor: 'purple',
+  },
+  headingText:{
+    textAlign: 'center',
+    fontSize: 24,
+    color: 'white',
+  },
+  goalsText:{
+    color: 'purple',
+    fontSize: 24,
+    fontWeight: "100",
+    marginTop: 80,
+  },
 });
