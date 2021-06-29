@@ -6,7 +6,7 @@ import {
   Button,
   TouchableWithoutFeedback,
   Keyboard,
-  Alert
+  Alert,
 } from "react-native";
 import Card from "../components/Card";
 import Colors from "../constants/colors";
@@ -25,28 +25,32 @@ const StartGameScreen = (props) => {
     setEnteredValue("");
     setConfirmState(false);
   };
- 
+
   const confirmInputHandler = () => {
     const chosenNumber = parseInt(enteredValue);
-    if (
-      isNaN(chosenNumber) ||
-      chosenNumber <= 0 ||
-      chosenNumber > 99
-    ) {
-      Alert.alert('Invalid Number', 'Number has to be between 1 and 99', [{text: 'OK', style: 'destructive', onPress: resetInputHandler}])
+    if (isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > 99) {
+      Alert.alert("Invalid Number", "Number has to be between 1 and 99", [
+        { text: "OK", style: "destructive", onPress: resetInputHandler },
+      ]);
       return;
     }
 
     setConfirmState(true);
     setSelectedNumber(chosenNumber);
     setEnteredValue("");
-    
+    Keyboard.dismiss();
   };
 
   let confirmedOutput;
-  if(confirmed)
-  {
-    confirmedOutput = <Text style={styles.chosenNumberText}> Chosen Number: {selectedNumber} </Text>
+  if (confirmed) {
+    confirmedOutput = (
+      <View style={styles.chosenNumberView}>
+        <Text style={styles.chosenNumberText}>
+          Chosen Number: {selectedNumber}
+        </Text>
+        <Button color="#222831" title="Start Game" onPress={() => props.onStartGame(selectedNumber)}/>
+      </View>
+    );
   }
 
   return (
@@ -78,7 +82,11 @@ const StartGameScreen = (props) => {
               />
             </View>
             <View style={styles.button}>
-              <Button color="#222831" title="Confirm" onPress={confirmInputHandler} />
+              <Button
+                color="#222831"
+                title="Confirm"
+                onPress={confirmInputHandler}
+              />
             </View>
           </View>
           {confirmedOutput}
@@ -115,8 +123,14 @@ const styles = StyleSheet.create({
   button: {
     width: "40%",
   },
-  chosenNumberText:{
+  chosenNumberText: {
     color: Colors.primary,
+  },
+  chosenNumberView:{
+    flexDirection: 'row',
+    width: '90%',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
 });
 
