@@ -1,7 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react';
 import { View, Text, Button, StyleSheet, Alert } from 'react-native';
 import Card from '../components/Card';
-
+import Colors from "../constants/colors";
 
 const generateRandomBetween = (min, max, exclude) => {
     min = Math.ceil(min);
@@ -48,11 +48,14 @@ const GameScreen = props => {
     };
     return(
         <View style={styles.screen}>
-            <Text>You provided: {props.userChoice}</Text>
-            <Text>Opponent's Guess {currentGuess}</Text>
-            <Card style={styles.buttons}>
-                <Button title="Lower" color="#222831" onPress={() => nextGuessHandler('lower')}/>
-                <Button title="Greater" color="#222831" onPress={() => nextGuessHandler('greater')}/>
+            <Card style={styles.card}>
+                <Text style={styles.cardText}>You provided: {props.userChoice}</Text>
+                <Text style={styles.cardText}>Opponent's Guess {currentGuess}</Text>
+                <View style={styles.buttons}>
+                    <View style={styles.button}><Button title="Lower" color="#222831" onPress={() => nextGuessHandler('lower')}/></View>
+                    <View style={styles.button}><Button title="Greater" color="#222831" onPress={() => nextGuessHandler('greater')}/></View>
+                </View>
+                
             </Card>
         </View>
     )
@@ -62,15 +65,29 @@ const styles = StyleSheet.create({
     screen:{
         flex: 1,
         padding: 10,
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    card:{
+        height: 200,
+        paddingTop: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    cardText:{
+        color: Colors.primary,
     },
     buttons:{
+        flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-around',
         marginTop: 20,
-        width: 300,
-        maxWidth: '80%',
-    }
+        width: '100%',
+        alignItems: 'center',
+    },
+    button:{
+        width: '40%',
+    },
 });
 
 export default GameScreen;

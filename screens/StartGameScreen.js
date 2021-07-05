@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
   guessTitleText: {
     color: Colors.primary,
     fontSize: 24,
-    fontWeight: "100",
+    fontFamily: 'open-sans',
   },
   card: {
     height: 200,
