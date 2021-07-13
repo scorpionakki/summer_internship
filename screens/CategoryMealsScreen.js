@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
 const CategoryMealsScreen = props => {
+    const catId = props.navigation.getParam('categoryId');
+    const catTitle = props.navigation.getParam('categoryTitle');
     return(
         <View style={styles.screen}>
             <Text>The category meals screen</Text>
@@ -17,6 +19,13 @@ const CategoryMealsScreen = props => {
         </View>
     )
 };
+
+CategoryMealsScreen.navigationOptions = navigationData => {
+   const title = navigationData.navigation.getParam('categoryTitle');
+   return{
+       headerTitle: title,
+   }
+}
 
 const styles = StyleSheet.create({
     screen:{
